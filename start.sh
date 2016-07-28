@@ -10,6 +10,6 @@ LOCKFILE=/run/apache2/apache2.pid
 
 trap "{ rm -f $LOCKFILE ; exit 255; }" EXIT SIGTERM
 
-/usr/sbin/apache2 -D FOREGROUND
+/usr/sbin/apache2ctl -D FOREGROUND
 
 exit 0
