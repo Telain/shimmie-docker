@@ -27,6 +27,7 @@ RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
 
 VOLUME	/var/www/html
 
+ADD https://raw.githubusercontent.com/Telain/shimmie-docker/master/php.ini /etc/php5/apache2/php.ini
 ADD https://raw.githubusercontent.com/Telain/shimmie-docker/master/start.sh /usr/local/bin/start.sh
 ADD https://github.com/shish/shimmie2/archive/master.zip /var/www/html/shimmie2.zip
 CMD unzip /var/www/html/shimmie2.zip -d /var/www/html/$SHIMMIEDIR
