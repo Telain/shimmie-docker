@@ -31,9 +31,6 @@ ADD https://raw.githubusercontent.com/Telain/shimmie-docker/master/start.sh /usr
 ADD https://github.com/shish/shimmie2/archive/master.zip /var/www/html/shimmie2.zip
 CMD unzip /var/www/html/shimmie2.zip -d /var/www/html/$SHIMMIEDIR
 
-RUN echo "Setup a MySQL/MariaDB and create an empty database"
-RUN echo "Visit yourhost/$SHIMMIEDIR/install.php" and configure"
-
 EXPOSE 80
 EXPOSE 443
 
