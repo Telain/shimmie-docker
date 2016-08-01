@@ -35,5 +35,5 @@ CMD unzip /var/www/html/shimmie2.zip -d /var/www/html/$SHIMMIEDIR
 EXPOSE 80
 EXPOSE 443
 
-ENTRYPOINT [CMD /usr/local/bin/start.sh]
+ENTRYPOINT [/usr/local/bin/start.sh]
 
