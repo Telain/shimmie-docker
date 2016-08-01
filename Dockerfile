@@ -26,16 +26,16 @@ RUN /usr/sbin/a2enmod ssl
 RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
 
 ADD https://raw.githubusercontent.com/Telain/shimmie-docker/master/php.ini /etc/php5/apache2/php.ini
-ADD https://raw.githubusercontent.com/Telain/shimmie-docker/master/start.sh /usr/local/bin/start.sh
-ADD https://github.com/shish/shimmie2/archive/master.zip /var/www/html/shimmie2.zip
+
 CMD mkdir /var/www/html/$SHIMMIEDIR
+ADD https://github.com/shish/shimmie2/archive/master.zip /var/www/html/shimmie2.zip
 CMD unzip /var/www/html/shimmie2.zip -d /var/www/html/$SHIMMIEDIR
 CMD rm /var/www/html/shimmie2.zip
 
-VOLUME	/var/www/html
+VOLUME	["/var/www", "/var/log/apache2", "/etc/apache2"
 
 EXPOSE 80
 EXPOSE 443
 
-ENTRYPOINT [/usr/local/bin/start.sh]
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
