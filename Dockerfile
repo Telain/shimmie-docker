@@ -32,7 +32,7 @@ ADD https://github.com/shish/shimmie2/archive/master.zip /var/www/html/shimmie2.
 CMD unzip /var/www/html/shimmie2.zip -d /var/www/html/$SHIMMIEDIR
 CMD rm /var/www/html/shimmie2.zip
 
-VOLUME	["/var/www", "/var/log/apache2", "/etc/apache2"
+VOLUME	["/var/www", "/var/log/apache2", "/etc/apache2"]
 
 EXPOSE 80
 EXPOSE 443
